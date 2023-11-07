@@ -1,0 +1,15 @@
+:root {
+--font-family-1: "Laila", serif;
+--font-family-2: "Mountains of Christmas", serif;
+
+--tekhelet: #3a3286ff; 
+--vista-blue: #a5a6f3ff; 
+--tangerine: #f18701ff; 
+--selective-yellow: #f7b801ff;
+}
+
+h1 {
+    font: var(--font-family-1);
+    background-color: var(--tekhelet);
+    color: var(--selective-yellow);
+}
