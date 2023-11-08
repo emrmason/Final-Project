@@ -8,8 +8,8 @@ ctx.lineTo(70,50);
 ctx.lineTo(45,85);
 ctx.stroke();
 
-const canvas = document.getElementById("myCanvas2");
-const ctx = canvas.getContext("2d");
+var d = document.getElementById("myCanvas2");
+var ctx = d.getContext("2d");
 ctx.strokeStyle = "white";
 ctx.lineWidth= 4;
 // circle 1
