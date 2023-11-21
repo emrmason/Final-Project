@@ -20,6 +20,7 @@
 }
 
 main {
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
     display: grid;
@@ -28,9 +29,12 @@ main {
 }
 
 header {
+    max-width:inherit;
     display: flex;
-    align-items: center;
-    margin: 20px;
+    justify-content: space-between;
+    margin-left: 150px;
+    margin-right: 150px;
+    padding: 10px; 
 }
 
 header img {
@@ -44,27 +48,26 @@ header h1{
     font-size: var(--font-size-1);
 }
 
-canvas {
-    display: block;
-}
-
 p {
     background-color: var(--vista-blue);
     color: black;
 }
 
-.game-choice-grid {
-    display: grid;
-    margin: 30px; 
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 10px; 
-}
-
-li {
-    margin: 10px auto;
+.game-choice-grid li{
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
     list-style-type: none;
     background-color: var(--vista-blue);
     border-style: outset;
-    border: 1px, solid, var(--tangerine);
+    border: 2px solid var(--tangerine);
+    border-radius:5%
 }
+
+footer {
+    font-size: .8em;
+}
+

@@ -1,6 +1,6 @@
 fetch("https://hp-api.onrender.com/api/characters")
     .then(res => res.json())
-    .then(data => console.log(data))
+    // .then(data => console.log(data)) // this was just to make sure the data was coming in- YES!!! 
 
 
 
