@@ -1,14 +1,18 @@
-fetch("https://hp-api.onrender.com/api/characters")
+ export async function getApiData() {
+    fetch("https://hp-api.onrender.com/api/characters")
     .then(res => res.json())
-    // .then(data => console.log(data)) // this was just to make sure the data was coming in- YES!!! 
+    .then(data => { data.forEach(character => {
+        const char = character.name;
+        const img = character.image;
+        console.log(char,img);
+    })})
+ }
 
-
-
-// function convertToJSON(res) {
-//     if(res.ok) {
-//         console.log("It worked.");
-//         return res.json();
+// function convertToJson(res) {
+//     if (res.ok) {
+//       return res.json();
 //     } else {
-//         console.log("Not working.");
+//       throw new Error("Bad Response");
 //     }
-// }
+//   }
+

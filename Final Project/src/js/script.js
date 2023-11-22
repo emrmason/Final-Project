@@ -1,7 +1,9 @@
+ import { getApiData} from "./memory.mjs";
 
-fetch("https://hp-api.onrender.com/api/characters")
-    .then(res => res.json())
-    .then(data => console.log(data))
+getApiData();
+
+
+// document.querySelector("ID or class or tag").insertAdjacentHTML("where? beforeend, etc.", var to insert);
 
 // Emily's attempt at using strokes to get the images I wanted for my header... Failed... But tried!
 // var c = document.getElementById("myCanvas1");
