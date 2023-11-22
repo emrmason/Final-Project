@@ -4,8 +4,12 @@
     .then(data => { data.forEach(character => {
         const char = character.name;
         const img = character.image;
-        console.log(char,img);
+        return (char, img);
     })})
+ }
+
+ export function createCard() {
+    document.querySelector("ul").insertAdjacentHTML(`<li>${char} <img src=${img} alt=${char}></li>`);
  }
 
 // function convertToJson(res) {
