@@ -71,3 +71,20 @@ footer {
     font-size: .8em;
 }
 
+ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1em 1em 1em;
+    grid-template-rows: 1em 1em;
+}
+
+#memory-cards {
+    height: 300px;
+    width: 200px;
+    border: 2px var(--tangerine) solid;
+    border-radius: 10px;
+}
+
+#memory-cards img{
+    max-height: 100px;
+}

@@ -1,7 +1,3 @@
- import { getApiData} from "./memory.mjs";
-
-getApiData();
-
 
 // document.querySelector("ID or class or tag").insertAdjacentHTML("where? beforeend, etc.", var to insert);
 
