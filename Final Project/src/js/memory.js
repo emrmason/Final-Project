@@ -1,4 +1,4 @@
-import { getApiData, createCard } from "./memory.mjs";
+import { getApiData } from "./memory.mjs";
 
 getApiData();
-createCard();
+
