@@ -2,7 +2,7 @@
 --font-family-1: "Mountains of Christmas", serif;
 --font-family-2: "Laila", serif;
 
---font-size-1: 60px;
+--font-size-1: 50px;
 --font-size-2: 1.1em;
 
 --tekhelet: #3a3286ff; 
@@ -29,6 +29,7 @@ main {
 }
 
 header {
+    max-height: 300px; 
     max-width:inherit;
     display: flex;
     justify-content: space-between;
@@ -38,7 +39,7 @@ header {
 }
 
 header img {
-    width: 250px;
+    height: 150px;
 }
 
 header h1{
@@ -48,9 +49,14 @@ header h1{
     font-size: var(--font-size-1);
 }
 
+h1 {
+    font-size: var(--font-size-1);
+}
+
 p {
     background-color: var(--vista-blue);
     color: black;
+    border-radius: 10px;
 }
 
 .game-choice-grid li{
@@ -71,36 +77,48 @@ footer {
     font-size: .8em;
 }
 
-ul {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+#memory-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between; 
     list-style-type: none;
-    margin: 100px;
-    padding: 0;
+    margin: 0 auto;
   }
 
-#memory-cards li{
-    height: 300px;
+.card {
+    height: 200px;
     width: 200px;
+    margin: 10px;  
     border: 2px var(--tangerine) solid;
     border-radius: 10px;
     background-color: var(--vista-blue);
-
+    box-shadow: 0 3px 10px;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
 }
 
-
-#memory-cards .back {
-    background-color:black;
-
+.front, .back {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: asbolute;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
 }
 .front {
     justify-content: center;
+    background-image: url(../images/vecteezy_harry-potter-quiddich-logo-in-cartoon-doodle-style-vector_22230280.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: black;
+} 
+
+.flipped {
+    transform: rotateY(180deg);
 }
 
-#memory-cards img{
-    align-content: center;
-    max-height: 300px;
-    max-width: 200px;
-    border-radius: 10px;
-}
