@@ -1,9 +1,8 @@
 const baseURL = "https://hp-api.onrender.com/api/characters";
-
 const numCards = [];
 const selectedCharacters = [];
-const matchesMade = 0;
-matches.textContent = `Matches: ${matchesMade}`;
+// const matchesMade = 0;
+// matches.textContent = `Matches: ${matchesMade}`;
 
 export async function getApiData() {
    while(numCards.length < 8){
@@ -25,40 +24,14 @@ export async function getApiData() {
       }
    }
 
-const clicked = (event) => {
-   console.log(event.currentTarget.dataset.charName);
-   const hpCard = event.currentTarget;
-   const [front, back] = getFrontAndBack(hpCard);
-   front.classList.toggle("flipped");
-   back.classList.toggle("flipped");
-   const cards = document.querySelectorAll(".card");
-   cards.forEach(card => {
-      card.addEventListener("click", clicked);
-   });
-}
-
-// function listen(click) {
-//    const cards = document.querySelectorAll(".card");
-//    cards.forEach(card => {
-//       card.addEventListener("click", clicked);
-//    });
-// }
-
-function createCard(char) {
+async function createCard(char) {
       document.querySelector("section").insertAdjacentHTML("afterbegin",
-      `<div class= "card" onclick="clicked(event)" data-charName = "${char}">
+      `<div class= "card" id="card" onclick="flipCard()" data-charName = "${char}">
          <div class="front">
          </div>
-         <div class= "back flipped">
+         <div class= "back">
             <h2>${char}</h2>
          </div>
       </div>`);
 }
-
-const getFrontAndBack = (card) => {
-   const front= card.querySelector(".front");
-   const back = card.querySelector(".back");
-   return [front, back]
-}
-
 
