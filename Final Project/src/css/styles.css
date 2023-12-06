@@ -96,6 +96,7 @@ footer {
     position: relative;
     overflow: hidden;
     transform-style: preserve-3d;
+    transition: transform 0.25s;
 }
 
 .front, .back {
@@ -118,7 +119,7 @@ footer {
     background-color: black;
 } 
 .back {
-    transform: rotateY(180deg);
+    text-align: center;
 }
 
 .flipped {

@@ -22,16 +22,35 @@ export async function getApiData() {
       for(let i=0; i < shuffledChar.length; i++){
          createCard(shuffledChar[i]);
       }
+      flipCard();
    }
+function flipCard() {
+   let cards = document.querySelectorAll(".card");
+   cards.forEach(card => { 
+      card.addEventListener("click", ()=>{
+         card.classList.add("flipped");
+      }) 
+      let front = card.querySelector(".front");
+      front.addEventListener('click', () =>{
+         console.log(card);
+         front.classList.add('flipped');
+      })
+      // let back = card.querySelector(".back");
+      // back.addEventListener("click", () => {
+      //    back.classList.remove('flipped');
+      // })
+   })
+}
+
 
 async function createCard(char) {
-      document.querySelector("section").insertAdjacentHTML("afterbegin",
-      `<div class= "card" id="card" onclick="flipCard()" data-charName = "${char}">
-         <div class="front">
+      document.querySelector("section").insertAdjacentHTML("afterbegin", // onclick="flipCard()"
+      `<div class= "card" id="card" data-charName = "${char}">  
+         <div class="front" >
          </div>
          <div class= "back">
             <h2>${char}</h2>
          </div>
       </div>`);
+      // document.addEventListener("click", flipCard);
 }
-
