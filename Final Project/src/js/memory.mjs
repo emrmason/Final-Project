@@ -1,8 +1,10 @@
 const baseURL = "https://hp-api.onrender.com/api/characters";
 const numCards = [];
 const selectedCharacters = [];
-// const matchesMade = 0;
-// matches.textContent = `Matches: ${matchesMade}`;
+let firstCard, secondCard;
+let pause = false; // to allow time for comparison between cards
+const matchesMade = 0;
+document.getElementById("matches").textContent = `Matches: ${matchesMade}`;
 
 export async function getApiData() {
    while(numCards.length < 8){
@@ -24,22 +26,28 @@ export async function getApiData() {
       }
       flipCard();
    }
+
 function flipCard() {
    let cards = document.querySelectorAll(".card");
    cards.forEach(card => { 
       card.addEventListener("click", ()=>{
-         card.classList.add("flipped");
+         card.classList.toggle("flipped");
       }) 
       let front = card.querySelector(".front");
       front.addEventListener('click', () =>{
-         console.log(card);
-         front.classList.add('flipped');
+         front.classList.toggle('flipped');
       })
-      // let back = card.querySelector(".back");
-      // back.addEventListener("click", () => {
-      //    back.classList.remove('flipped');
-      // })
    })
+      if (!firstCard) {
+         firstCard = card;
+         console.log(firstCard);
+         return
+      }
+      secondCard = card;
+      console.log(secondCard);
+      pause = true;
+
+   // checkMatch();
 }
 
 
@@ -54,3 +62,22 @@ async function createCard(char) {
       </div>`);
       // document.addEventListener("click", flipCard);
 }
+
+// function checkMatch(firstCard, secondCard) {
+//    console.log(firstCard, secondCard);
+//    let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+//    isMatch ? disableCards() : unflipCards();
+// }
+
+// function disableCards() {
+//    firstCard.removeEventListener("click", flipCard);
+//    secondCard.removeEventListener("click", flipCard);
+//    matches++;
+// }
+
+// function unflipCards() {
+//    setTimeout(()=> {
+//       firstCard.classList.remove("flipped");
+//       secondCard.classList.remove("flipped");
+//    }, 1000);
+// }

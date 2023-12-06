@@ -29,7 +29,7 @@ main {
 }
 
 header {
-    max-height: 300px; 
+    max-height: 200px; 
     max-width:inherit;
     display: flex;
     justify-content: space-between;
@@ -39,7 +39,7 @@ header {
 }
 
 header img {
-    height: 150px;
+    height: 100px;
 }
 
 header h1{
@@ -86,8 +86,8 @@ footer {
   }
 
 .card {
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     margin: 10px;  
     border: 2px var(--tangerine) solid;
     border-radius: 10px;
