@@ -29,7 +29,6 @@ async function flipCard() {
    let cards = document.querySelectorAll(".card");
    cards.forEach(card => { 
       card.addEventListener("click", ()=>{
-         // card.classList.toggle("flipped");
          let front = card.querySelector(".front");
          front.addEventListener('click', () =>{
          front.classList.toggle('flipped');
