@@ -3,6 +3,8 @@ const numCards = [];
 const selectedCharacters = [];
 let firstCard, secondCard;
 let matchesMade = 0;
+let moves = 0;
+let accuracy = matchesMade/moves;
 
 export async function getApiData() {
    while(numCards.length < 8){
@@ -22,15 +24,14 @@ export async function getApiData() {
       for(let i=0; i < shuffledChar.length; i++){
          createCard(shuffledChar[i]);
       }  
-      await flipCard();
+      flipCard();
    }
 
-async function flipCard() {
+function flipCard() {
    let cards = document.querySelectorAll(".card");
    cards.forEach(card => { 
       card.addEventListener("click", ()=>{
          let front = card.querySelector(".front");
-         front.addEventListener('click', () =>{
          front.classList.toggle('flipped');
          let back = card.querySelector(".back");
          back.classList.toggle('flipped');
@@ -41,15 +42,15 @@ async function flipCard() {
          }
          secondCard = card;
          checkMatch(firstCard, secondCard);
-      }); 
-   });
-      
-   });
+         moves+=1;
+         document.getElementById("moves").textContent = `Moves: ${moves}`;
+         });
+      });
    }
    
 
-async function createCard(char) {
-      document.querySelector("section").insertAdjacentHTML("afterbegin", // onclick="flipCard()"
+function createCard(char) {
+      document.querySelector("section").insertAdjacentHTML("afterbegin",
       `<div class="card" data-charName = "${char}">  
          <div class="front"></div>
          <div class= "back flipped">
@@ -60,11 +61,11 @@ async function createCard(char) {
 }
 
 async function checkMatch(firstCard, secondCard) {
-   let char1 = firstCard.dataset;
-   let char2 = secondCard.dataset;
+   let char1 = firstCard.dataset.charname;
+   let char2 = secondCard.dataset.charname;
    console.log(char1, char2);
    if (char1 === char2) {
-      matchesMade++;
+      matchesMade+=1;
       document.getElementById("matches").textContent = `Matches: ${matchesMade}`;
       disableCards();
       console.log("match");
@@ -97,4 +98,16 @@ async function unflipCards(firstCard, secondCard) {
 function resetCards() {
    firstCard = null;
    secondCard = null;
+   // console.log(firstCard, secondCard);
 }
+
+// function resetGame(matchesMade) {
+//    if(matchesMade == 8) {
+//       document.getElementById("winningPage").style("visibility = visible")
+//       document.getElementById("winningScript").textContent = `You finished the game with ${accuracy}% accuracy!<br>Would you like to start another round?`
+//       document.getElementById("playAgain").addEventListener("click", window.location.reload());
+//    } else {
+//       return
+//    }  
+// }
+// resetGame();

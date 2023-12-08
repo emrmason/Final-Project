@@ -58,6 +58,17 @@ p {
     color: black;
     border-radius: 10px;
 }
+/* Styles for Memory game start here */
+.stats{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.stats div{
+    padding-left: 20px ;
+    padding-right: 20px;
+}
 
 .game-choice-grid li{
     display: inline-block;
@@ -125,7 +136,44 @@ footer {
 .flipped {
     transform: rotateY(180deg);
 }
+/* 
+#winningPage{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--tangerine);
+    border-radius: 10px;
+    z-index: 10;
+    background-color: var(--vista-blue);
+    width: 400px;
+    max-width: 75%;
+    visibility: hidden;
+}
 
+#winningPage h2 {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#winningPage button {
+    padding: 10px;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5), 
+}
+ */
+
+/* Styles for House Trivia start here*/
 .answer-buttons {
     height: 300px;
     width: 500px;
