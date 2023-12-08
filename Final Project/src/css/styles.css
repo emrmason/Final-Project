@@ -176,7 +176,7 @@ footer {
 /* Styles for House Trivia start here*/
 .answer-buttons {
     height: 300px;
-    width: 500px;
+    width: 300px;
     margin: 50px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -186,7 +186,7 @@ footer {
 .btn {
     width: 200px;
     height: 100px;
-    box-shadow: 0, 3px, 3px;
+    border-radius: 15px;
 }
 
 .correct {

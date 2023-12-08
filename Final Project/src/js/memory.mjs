@@ -63,14 +63,14 @@ function createCard(char) {
 async function checkMatch(firstCard, secondCard) {
    let char1 = firstCard.dataset.charname;
    let char2 = secondCard.dataset.charname;
-   console.log(char1, char2);
+   // console.log(char1, char2);
    if (char1 === char2) {
       matchesMade+=1;
       document.getElementById("matches").textContent = `Matches: ${matchesMade}`;
       disableCards();
-      console.log("match");
+      // console.log("match");
    } if (char1 != char2){
-      console.log("no match")
+      // console.log("no match")
       unflipCards(firstCard, secondCard);
    }
 }
