@@ -126,25 +126,47 @@ footer {
     transform: rotateY(180deg);
 }
 
-.btn1 {
-    background-color: #bc1038;
-
+.answer-buttons {
+    height: 300px;
+    width: 500px;
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
 }
 
-.btn2 {
+.btn {
+    width: 200px;
+    height: 100px;
+    box-shadow: 0, 3px, 3px;
+}
+
+.correct {
+    background-color: #a7c957;
+}
+
+.incorrect {
+    background-color: red;
+}
+
+#Gryffindor {
+    background-color: #bc1038;
+}
+
+#Ravenclaw {
     background-color: #1344A4;
 }
 
-.btn3 {
+#Hufflepuff {
     background-color: #ffd166;
     color: black;
 }
 
-.btn4 {
+#Slytherin {
     background-color: #048b67;
 }
 
-.btn5 {
+#btn5 {
     background-color: var(--vista-blue);
     color: black;
 }
