@@ -174,9 +174,9 @@ footer {
  */
 
 /* Styles for House Trivia start here*/
+
+
 .answer-buttons {
-    height: 300px;
-    width: 300px;
     margin: 50px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -189,13 +189,6 @@ footer {
     border-radius: 15px;
 }
 
-.correct {
-    background-color: #a7c957;
-}
-
-.incorrect {
-    background-color: red;
-}
 
 #Gryffindor {
     background-color: #bc1038;

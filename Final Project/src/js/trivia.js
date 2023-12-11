@@ -33,34 +33,32 @@ function displayQuestion() {
     let x = randNum;
     number1 = charsWithHouses[x];
     num1House= charactersHouses[x];
-    // console.log(num1House);
+    console.log(num1House);
     let question = `<p>Which house does ${number1} belong to?</p>`
     document.querySelector(".question-container").insertAdjacentHTML("afterbegin", question);
     return num1House;
 }
 
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll("btn");
 const buttonPressed = e => {
     btnId = e.target.id;
-    // console.log(btnId);
-    return btnId;
+    console.log(btnId);
+    const correct = checkAnswer(btnId, num1House);
+    if (correct) {
+        e.target.style.backgroundColor = "#a7c957";
+        points+=1;
+    } else {
+        e.target.style.backgroundColor = "red";
+        window.alert("Try again!");
+    }
+
 }
 for(let button of buttons){
     button.addEventListener("click", buttonPressed);
 }
 
-checkAnswer(num1House);
 
-function checkAnswer(num1House) {
-    if(buttonPressed){
-        if(btnId === num1House) {
-            console.log("Correct!");
-        }
-        else {
-            console.log("One more try.");
-        }
-    }
+function checkAnswer(num1House, btnId) {
+    return btnId === num1House;
 }
-
-
 
