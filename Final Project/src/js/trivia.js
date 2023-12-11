@@ -5,15 +5,10 @@ let charactersHouses = [];
 let charName;
 let house;
 const answers = {text:["Gryffindor"], text:["Ravenclaw"], text: ["Hufflepuff"], text: ["Slytherin"], text: ["No Idea"]};
-const answers = {text:["Gryffindor"], text:["Ravenclaw"], text: ["Hufflepuff"], text: ["Slytherin"], text: ["No Idea"]};
 let randNum = Math.floor(Math.random() * 135);
 let points = 0;
 let number1;
 let num1House;
-let correct = false;
-const answerButtonsElement = document.getElementById("answer-buttons")
-let correct = false;
-const answerButtonsElement = document.getElementById("answer-buttons")
 
 getTriviaData();
 
