@@ -193,7 +193,7 @@ footer {
 .btn:hover {
     outline: var(--selective-yellow);
 }
-.correct {
+/* .correct {
     background-color: #a7c957;
     color: black;
 }
@@ -201,7 +201,7 @@ footer {
 .incorrect {
     background-color: red;
     color: white;
-}
+} */
 
 #Gryffindor {
     background-color: #bc1038;

@@ -36,13 +36,7 @@ function displayQuestion() {
     num1House= charactersHouses[x];
     console.log(num1House);
     let question = `Which house does ${number1} belong to?`
-    document.querySelector(".question-container").innerText = question;
-    const button = document.createElement("button");
-    for(let i=0; i<answers.length; i++){
-        button.innerText = answers[i].text;
-        button.dataset = answers[i].text;
-        button.addEventListener('click', selectAnswer);
-    }
+    document.querySelector("#question-container").innerText = question;
     return num1House;
 }
 
@@ -54,6 +48,7 @@ const buttonPressed = e => {
     if (correct) {
         e.target.style.backgroundColor = "#a7c957";
         points+=1;
+        document.querySelector(".score").innerHTML = `<p>Points: ${points}</p>`;
     } else {
         e.target.style.backgroundColor = "red";
         window.alert("Try again!");
