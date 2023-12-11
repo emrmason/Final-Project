@@ -4,12 +4,13 @@ let charsWithHouses = [];
 let charactersHouses = [];
 let charName;
 let house;
-// const houseList = {btn1:["Gryffindor"], btn2:["Ravenclaw"], btn3: ["Hufflepuff"], btn4: ["Slytherin"], btn5: ["No Idea"]};
+const answers = {text:["Gryffindor"], text:["Ravenclaw"], text: ["Hufflepuff"], text: ["Slytherin"], text: ["No Idea"]};
 let randNum = Math.floor(Math.random() * 135);
 let points = 0;
 let number1;
 let num1House;
-let btnId;
+let correct = false;
+const answerButtonsElement = document.getElementById("answer-buttons")
 
 getTriviaData();
 
@@ -33,34 +34,24 @@ function displayQuestion() {
     let x = randNum;
     number1 = charsWithHouses[x];
     num1House= charactersHouses[x];
-    // console.log(num1House);
-    let question = `<p>Which house does ${number1} belong to?</p>`
-    document.querySelector(".question-container").insertAdjacentHTML("afterbegin", question);
+    console.log(num1House);
+    let question = `Which house does ${number1} belong to?`
+    document.querySelector(".question-container").innerText = question;
+    const button = document.createElement("button");
+    for(let i=0; i<answers.length; i++){
+        button.innerText = answers[i].text;
+        button.dataset = answers[i].text;
+        button.addEventListener('click', selectAnswer);
+    }
     return num1House;
 }
 
-const buttons = document.querySelectorAll("button");
-const buttonPressed = e => {
-    btnId = e.target.id;
-    // console.log(btnId);
-    return btnId;
-}
-for(let button of buttons){
-    button.addEventListener("click", buttonPressed);
+
+function selectAnswer(e) {
+    const selectedButton = e.target;
+    let answer = selectedButton.dataset;
 }
 
-checkAnswer(num1House);
-
-function checkAnswer(num1House) {
-    if(buttonPressed){
-        if(btnId === num1House) {
-            console.log("Correct!");
-        }
-        else {
-            console.log("One more try.");
-        }
-    }
+function checkAnswer(num1House, answer){
+    
 }
-
-
-

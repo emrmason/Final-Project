@@ -187,14 +187,20 @@ footer {
     width: 200px;
     height: 100px;
     border-radius: 15px;
+    outline: none;
 }
 
+.btn:hover {
+    outline: var(--selective-yellow);
+}
 .correct {
     background-color: #a7c957;
+    color: black;
 }
 
 .incorrect {
     background-color: red;
+    color: white;
 }
 
 #Gryffindor {
