@@ -4,7 +4,7 @@ let charsWithHouses = [];
 let charactersHouses = [];
 let charName;
 let house;
-const answers = {text:["Gryffindor"], text:["Ravenclaw"], text: ["Hufflepuff"], text: ["Slytherin"], text: ["No Idea"]};
+// const answers = {text:["Gryffindor"], text:["Ravenclaw"], text: ["Hufflepuff"], text: ["Slytherin"], text: ["No Idea"]};
 let randNum = Math.floor(Math.random() * 135);
 let points = 0;
 let number1;
@@ -33,30 +33,32 @@ function displayQuestion() {
     let x = randNum;
     number1 = charsWithHouses[x];
     num1House= charactersHouses[x];
-    console.log(num1House);
+    // console.log(num1House);
     let question = `Which house does ${number1} belong to?`
     document.querySelector("#question-container").innerText = question;
-    const button = document.createElement("button");
-    for(let i=0; i<answers.length; i++){
-        button.innerText = answers[i].text;
-        button.dataset = answers[i].text;
-        button.addEventListener('click', selectAnswer);
-    }
     return num1House;
 }
 
 const buttons = document.querySelectorAll(".btn");
 const buttonPressed = e => {
     btnId = e.target.id;
-    console.log(btnId);
+    // console.log(btnId);
     const correct = checkAnswer(btnId, num1House);
     if (correct) {
         e.target.style.backgroundColor = "#a7c957";
         points+=1;
         document.querySelector(".score").innerHTML = `<p>Points: ${points}</p>`;
+        setTimeout(()=>{
+            e.target.style.backgroundColor = "";
+            randNum = Math.floor(Math.random() * 135);
+            displayQuestion();
+        }, 1500)
     } else {
         e.target.style.backgroundColor = "red";
         window.alert("Try again!");
+        setTimeout(()=>{
+            e.target.style.backgroundColor = "";
+        }, 1000)
     }
 
 }
