@@ -58,6 +58,12 @@ p {
     color: black;
     border-radius: 10px;
 }
+
+span {
+    background-color: var(--vista-blue);
+    color: black;
+    border-radius: 10px;
+}
 /* Styles for Memory game start here */
 .stats{
     display: flex;

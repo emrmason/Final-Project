@@ -7,6 +7,7 @@ let house;
 // const answers = {text:["Gryffindor"], text:["Ravenclaw"], text: ["Hufflepuff"], text: ["Slytherin"], text: ["No Idea"]};
 let randNum = Math.floor(Math.random() * 135);
 let points = 0;
+let tries = 0;
 let number1;
 let num1House;
 let btnId;
@@ -46,8 +47,10 @@ const buttonPressed = e => {
     const correct = checkAnswer(btnId, num1House);
     if (correct) {
         e.target.style.backgroundColor = "#a7c957";
+        tries+=1;
         points+=1;
-        document.querySelector(".score").innerHTML = `<p>Points: ${points}</p>`;
+        document.getElementById("score").textContent = `Points: ${points}`;
+        document.getElementById("tries").textContent = `Tries: ${tries}`;
         setTimeout(()=>{
             e.target.style.backgroundColor = "";
             randNum = Math.floor(Math.random() * 135);
@@ -55,6 +58,8 @@ const buttonPressed = e => {
         }, 1500)
     } else {
         e.target.style.backgroundColor = "red";
+        tries += 1;
+        document.getElementById("tries").textContent = `Tries: ${tries}`;
         window.alert("Try again!");
         setTimeout(()=>{
             e.target.style.backgroundColor = "";
