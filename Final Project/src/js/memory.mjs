@@ -68,6 +68,9 @@ async function checkMatch(firstCard, secondCard) {
       matchesMade+=1;
       document.getElementById("matches").textContent = `Matches: ${matchesMade}`;
       disableCards();
+      // if(matchesMade === 8){
+      //    resetGame();
+      // }
       // console.log("match");
    } if (char1 != char2){
       // console.log("no match")
@@ -110,4 +113,3 @@ function resetCards() {
 //       return
 //    }  
 // }
-// resetGame();

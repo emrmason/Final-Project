@@ -142,8 +142,8 @@ footer {
 .flipped {
     transform: rotateY(180deg);
 }
-/* 
-#winningPage{
+
+/* #winningPage{
     position: fixed;
     top: 50%;
     left: 50%;
@@ -176,8 +176,8 @@ footer {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, .5), 
-}
- */
+} */
+
 
 /* Styles for House Trivia start here*/
 
