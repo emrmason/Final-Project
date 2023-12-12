@@ -9,6 +9,7 @@ let randNum = Math.floor(Math.random() * 135);
 let points = 0;
 let number1;
 let num1House;
+let btnId;
 
 getTriviaData();
 
@@ -35,10 +36,16 @@ function displayQuestion() {
     console.log(num1House);
     let question = `Which house does ${number1} belong to?`
     document.querySelector("#question-container").innerText = question;
+    const button = document.createElement("button");
+    for(let i=0; i<answers.length; i++){
+        button.innerText = answers[i].text;
+        button.dataset = answers[i].text;
+        button.addEventListener('click', selectAnswer);
+    }
     return num1House;
 }
 
-const buttons = document.querySelectorAll("btn");
+const buttons = document.querySelectorAll(".btn");
 const buttonPressed = e => {
     btnId = e.target.id;
     console.log(btnId);
