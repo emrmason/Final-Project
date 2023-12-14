@@ -1,0 +1,13 @@
+{
+  "name": "final-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo 'No build process required'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
